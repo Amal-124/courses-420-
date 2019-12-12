@@ -1,0 +1,31 @@
+<h1>
+
+Register New Courses
+
+</h1>
+
+<url>
+
+{% for c in courses %}
+
+<li>{{c.course_title}}</li>
+
+{% endfor %}
+
+</url>
+
+<form action="/courses/course/" method="POST">
+
+{% csrf_token %}
+
+Course Code: <input type="text" name="course_code" ><br>
+
+CourseTitle:<input type="text" name="course_title" ><br>
+
+Course credit:<input type="text" name="course_credit" ><br>
+
+Elecctive: <input type="checkbox" name="elective">Elective<br>
+
+<input type="submit" value="Add Course">
+
+</form>
